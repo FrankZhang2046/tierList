@@ -6,7 +6,6 @@ const Tier=props=>{
 
     return(
         <div className="tier">
-            {console.log(color)}
             <div className="tier__cover" style={{background:`#${color}`}}>
                 <p className="tier__cover--label">{name}</p>
             </div>
