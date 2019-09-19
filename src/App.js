@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Tier from './components/Tier/Tier';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  state={
+    tierTemplate: [{name: 'S', color: 'ff797c'}, {name: 'A', color: 'febf7a'}, {name: 'B', color: 'ffff75'}, {name: 'C', color: '80ff78'}, {name: 'D', color: '7dbcff'}, {name: 'E', color: '7c71ff'}, {name: 'F', color: 'ff6cff'}] 
+  }
+  
+  render(){
+    return (
+      <div className="app">
+        {this.state.tierTemplate.map(
+          tier => <Tier name={tier.name} color={tier.color}/>
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;

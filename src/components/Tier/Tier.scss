@@ -1,0 +1,18 @@
+.tier{
+    &__cover{
+        width:65px;
+        min-height:65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--label{
+            display: flex;  
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    margin-bottom: 5px;
+    background: #898989;
+}
