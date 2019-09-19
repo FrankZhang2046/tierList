@@ -4,7 +4,7 @@ const StagingArea = props => {
     return(
         <div className='staging-area'>
             {props.cards.map(
-                card => <img style={{'width':'50px', 'height':'50px'}} src={card} alt=""/>
+                card => <img style={{width:'65', height:'65px', objectFit:'cover'}} src={card} alt=""/>
             )}
         </div>
     )

@@ -15,7 +15,9 @@ class App extends React.Component{
     axios.get('http://localhost:8080/')
         .then((response)=>{
           response.data.files.map(
-            image => this.setState({stagingAreaStack: this.state.stagingAreaStack.concat(response.data.path += image)})
+            imagePath=>{
+              this.setState({stagingAreaStack: this.state.stagingAreaStack.concat(response.data.path + imagePath)})
+            }
           )
         })
   }
