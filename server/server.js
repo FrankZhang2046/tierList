@@ -19,4 +19,8 @@ app.get('/', (req, res)=>{
     res.send(myStruct);
 })
 
+app.post('/', (req, res)=>{
+    console.log(req.body.cardStack)
+})
+
 app.listen(8080, console.log(`server listening on port ${port}`));
