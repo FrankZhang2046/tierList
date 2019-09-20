@@ -8,6 +8,7 @@ const ImageCard =props=>{
             <img src={props.imageUrl} alt="" className="image-card__image"/>
             <TierChanger 
             cardPath={props.imageUrl}
+            tier={props.tier}
             changeTier={props.changeTier}/>
         </div>
     )

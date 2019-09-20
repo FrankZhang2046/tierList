@@ -12,7 +12,7 @@ const Tier=props=>{
             </div>
             <div className="tier__cards-area">
                 {(cards && cards.length>0 )? cards.map(
-                    card => <ImageCard imageUrl={card.path} changeTier={props.changeTier}/>
+                    card => <ImageCard imageUrl={card.path} tier={card.tier} changeTier={props.changeTier}/>
                 ) : null}
             </div>
         </div>

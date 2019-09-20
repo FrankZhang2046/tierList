@@ -28,7 +28,7 @@ class App extends React.Component{
               this.setState({cardStack: this.state.cardStack.concat(
                 {
                   path: response.data.path + imagePath,
-                  tier: 'A',
+                  tier: 'N/A',
                 }
               )})
             }
@@ -47,7 +47,7 @@ class App extends React.Component{
           )}/>
         )}
         <StagingArea cards={this.state.cardStack.filter(
-          card => card.tier === 'staging'
+          card => card.tier === 'N/A'
         )}
         changeTier={this.changeTier}
         />
