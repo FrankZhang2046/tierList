@@ -5,7 +5,7 @@ const StagingArea = props => {
     return(
         <div className='staging-area'>
             {props.cards.map(
-                imageUrl => <ImageCard imageUrl={imageUrl}/>
+                card => <ImageCard imageUrl={card.path} changeTier={props.changeTier}/>
             )}
         </div>
     )

@@ -6,7 +6,9 @@ const ImageCard =props=>{
     return(
         <div className="image-card">
             <img src={props.imageUrl} alt="" className="image-card__image"/>
-            <TierChanger />
+            <TierChanger 
+            cardPath={props.imageUrl}
+            changeTier={props.changeTier}/>
         </div>
     )
 }

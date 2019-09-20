@@ -8,7 +8,16 @@ import StagingArea from './components/StagingArea/StagingArea';
 class App extends React.Component{
   state={
     tierTemplate: [{name: 'S', color: 'ff797c'}, {name: 'A', color: 'febf7a'}, {name: 'B', color: 'ffff75'}, {name: 'C', color: '80ff78'}, {name: 'D', color: '7dbcff'}, {name: 'E', color: '7c71ff'}, {name: 'F', color: 'ff6cff'}],
-    stagingAreaStack: [], 
+    cardStack: [], 
+  }
+
+  changeTier=(path, newTier)=>{
+    let newState = this.state.cardStack;
+    newState[this.state.cardStack.findIndex(
+      card=> card.path === path
+    )].tier = newTier;
+    
+    this.setState({cardStack: newState});
   }
   
   componentDidMount(){
@@ -16,7 +25,12 @@ class App extends React.Component{
         .then((response)=>{
           response.data.files.map(
             imagePath=>{
-              this.setState({stagingAreaStack: this.state.stagingAreaStack.concat(response.data.path + imagePath)})
+              this.setState({cardStack: this.state.cardStack.concat(
+                {
+                  path: response.data.path + imagePath,
+                  tier: 'A',
+                }
+              )})
             }
           )
         })
@@ -26,9 +40,17 @@ class App extends React.Component{
     return (
       <div className="app">
         {this.state.tierTemplate.map(
-          tier => <Tier name={tier.name} color={tier.color}/>
+          tier => <Tier name={tier.name} 
+          changeTier={this.changeTier}
+          color={tier.color} cards={this.state.cardStack.filter(
+            card=>card.tier === tier.name
+          )}/>
         )}
-        <StagingArea cards={this.state.stagingAreaStack}/>
+        <StagingArea cards={this.state.cardStack.filter(
+          card => card.tier === 'staging'
+        )}
+        changeTier={this.changeTier}
+        />
       </div>
     );
   }
