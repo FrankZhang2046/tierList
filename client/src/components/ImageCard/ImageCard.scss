@@ -1,0 +1,11 @@
+.image-card{
+    position: relative;
+    width:70px;
+    display:inline-block;
+    margin-right: 5px;
+
+    &__image{
+        width:65px;
+        height:65px;
+    }
+}
