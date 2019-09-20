@@ -38,14 +38,18 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get("http://localhost:8080/").then(response => {
-      response.data.files.map(imagePath => {
-        this.setState({
-          cardStack: this.state.cardStack.concat({
-            path: response.data.path + imagePath,
-            tier: "N/A"
-          })
+      if (response.data.length > 2) {
+        this.setState({cardStack: response.data})
+      } else {
+        response.data.files.map(imagePath => {
+          this.setState({
+            cardStack: this.state.cardStack.concat({
+              path: response.data.path + imagePath,
+              tier: "N/A"
+            })
+          });
         });
-      });
+      }
     });
   }
 
