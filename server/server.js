@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cors());
 
-let files = fs.readdirSync(`/Users/frankzhang/Documents/web-dev/ranker/server/images`);
+let files = fs.readdirSync('./images');
 const myStruct = {path:'http://localhost:8080/', files};
 
 app.use(express.static('images'));
