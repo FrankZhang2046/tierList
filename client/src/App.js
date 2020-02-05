@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Tier from "./components/Tier/Tier";
 import StagingArea from "./components/StagingArea/StagingArea";
+import HookTest from "./components/HookTest/HookTest";
 
 class App extends React.Component {
   state = {
@@ -56,6 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <HookTest />
         {this.state.tierTemplate.map(tier => (
           <Tier
             name={tier.name}
