@@ -10,3 +10,4 @@ run `npm install` in the `server` and the `client` directory
 
 -   under the `server` directory, run `node server`
 -   under the `client` directory, run `npm start`
+-   **NOTE**: in case of `node-sass` related errors, run `npm update node-sass` to update the package to the latest version

@@ -57,7 +57,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <HookTest />
         {this.state.tierTemplate.map(tier => (
           <Tier
             name={tier.name}
