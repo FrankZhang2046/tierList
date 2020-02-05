@@ -1,6 +1,6 @@
 # Tier List
 
-Tier List is a toy React project inspired by the numerous `tier list` videos on YouTube. The gist of this project is to be able to rank the images from tier `A` to `F` through each image's dropdown menu.
+Tier List is a toy React project inspired by the numerous `tier list` videos on YouTube. The gist of this project is a UI for the user to be able to rank the images from tier `A` to `F` through each image's dropdown menu.
 
 # Installation
 
